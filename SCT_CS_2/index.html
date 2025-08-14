@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Encryption Tool | Cybersecurity UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #181A20;
+            color: #E2E6EA;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #25314C 50%, #1A232D 100%);
+            padding: 32px 0 18px 0;
+            box-shadow: 0 2px 8px rgba(17,32,60, 0.25);
+            text-align: center;
+        }
+        header h1 {
+            color: #51FFC4;
+            font-size: 2.5em;
+            margin-bottom: 4px;
+            letter-spacing: 0.1em;
+        }
+        header p {
+            color: #AEDCEF;
+            font-size: 1.15em;
+            margin: 0;
+        }
+        .container {
+            max-width: 480px;
+            margin: 40px auto 0 auto;
+            background: #23292F;
+            border-radius: 15px;
+            box-shadow: 0 6px 24px #0F172A55;
+            padding: 30px 28px 28px 28px;
+        }
+        .task-title {
+            font-size: 1.5em;
+            color: #FFF35C;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 14px;
+            letter-spacing: 0.08em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 18px;
+            font-size: 1em;
+            color: #81C7F0;
+        }
+        input[type="file"], input[type="number"] {
+            margin: 10px 0;
+            background: #181A20;
+            color: #E2E6EA;
+            border: 1px solid #51FFC4;
+            border-radius: 8px;
+            padding: 7px;
+            font-size: 1em;
+        }
+        select {
+            margin-top: 10px;
+            background: #181A20;
+            color: #E2E6EA;
+            border-radius: 8px;
+            border: 1px solid #51FFC4;
+            padding: 7px;
+            font-size: 1em;
+        }
+        button {
+            margin-top: 24px;
+            background: linear-gradient(90deg,#51FFC4 15%,#51C4FF 85%);
+            color: #181A20;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+            transition: filter 0.18s;
+        }
+        button:hover {
+            filter: brightness(1.15);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #596276;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Encryption Tool</h1>
+        <p>Task 02 – Secure Images With Pixel Manipulation</p>
+    </header>
+    <div class="container">
+        <div class="task-title">Cybersecurity Encryption Tool</div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Image (JPEG/PNG):</label>
+            <input type="file" id="file" name="file" accept=".jpg,.jpeg,.png" required>
+            
+            <label for="operation">Choose Encryption Operation:</label>
+            <select id="operation" name="operation" required>
+                <option value="xor">XOR Cipher</option>
+                <option value="swap">Swap Channels (RGB→GBR)</option>
+            </select>
+            
+            <label for="key">Encryption Key (for XOR):</label>
+            <input type="number" id="key" name="key" min="0" max="255" placeholder="e.g., 123">
+            
+            <button type="submit">Encrypt Image</button>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2025 cyb3rPh03n1x | Internship Task 2
+    </div>
+</body>
+</html>
